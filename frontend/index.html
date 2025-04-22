@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Demo</title>
+    <style>
+        .progress { width: 300px; height: 20px; border: 1px solid #ccc; }
+        .progress-bar { height: 100%; background: #4CAF50; transition: width 0.3s; }
+    </style>
+</head>
+<body>
+    <input type="file" id="fileInput">
+    <button onclick="startUpload()">Upload</button>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+    </div>
+    <div id="status"></div>
+
+    <script src="upload.js"></script>
+</body>
+</html>
