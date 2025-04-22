@@ -22,7 +22,9 @@ async function startUpload() {
         // Upload parallel với Promise.all
         const uploadPromises = [];
         for (let i = 0; i < totalChunks; i++) {
-            if (uploadState.uploadedChunks.includes(i)) continue;
+            // Kiểm tra nếu đã upload chunk này
+            const state = JSON.parse(localStorage.getItem(fileId));
+            if (state.uploadedChunks.includes(i)) continue;
 
             const chunk = file.slice(i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE);
             const fileHash = await calculateFileHash(file);
